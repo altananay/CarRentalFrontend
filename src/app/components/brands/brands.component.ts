@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Brand } from 'src/models/brand';
+import { BrandDto } from 'src/models/brandDto';
 import { BrandService } from 'src/services/brand.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { BrandService } from 'src/services/brand.service';
 })
 export class BrandsComponent implements OnInit {
 
-  brands:Brand[] = []
+  brands:BrandDto[] = []
 
 
 

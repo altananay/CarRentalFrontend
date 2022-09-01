@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mt-5 mb-5">
+      <ul class="list-group">
+        <li class="list-group-item">Tüm Markalar</li>
+        <li
+          *ngFor="let brand of brandList"
+          class="list-group-item"
+          routerLink="/cars/brand/{{ brand.id }}"
+        >
+          {{ brand.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9 mt-5 mb-5">
+      <div class="latest-products">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let car of carList">
+            <div class="product-item">
+              <a href="offers.html"
+                ><img src="{{ car.imagePath }}" alt="" class="img-fluid"
+              /></a>
+              <div class="down-content">
+                <a href="offers.html"
+                  ><h4>{{ car.description }}</h4></a
+                >
+                <h6>
+                  <small>from</small> {{ car.dailyPrice }}
+                  <small>per weekend</small>
+                </h6>
+                <ul style="padding: 0">
+                  <li>Renk: {{ car.colorName }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

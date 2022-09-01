@@ -1,5 +1,6 @@
-export interface Car
+export interface CarDto
 {
+    id: number,
     brandName: string,
     colorName: string,
     modelYear: string,

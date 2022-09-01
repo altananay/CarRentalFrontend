@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { BrandsComponent } from './components/brands/brands.component';
+import { BrandlistComponent } from './components/brandlist/brandlist.component';
+import { CarbrandlistComponent } from './components/carbrandlist/carbrandlist.component';
+import { CardetailsComponent } from './components/cardetails/cardetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NaviComponent,
     CarsComponent,
-    BrandsComponent
+    BrandsComponent,
+    BrandlistComponent,
+    CarbrandlistComponent,
+    CardetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-md-3 mt-5 mb-5">
+    <div class="row">
+      <ul class="list-group">
+        <li class="list-group-item">Tüm Markalar</li>
+        <li *ngFor="let brand of brandList" class="list-group-item" routerLink="/cars/brand/{{brand.id}}">
+          {{ brand.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

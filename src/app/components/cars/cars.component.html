@@ -10,20 +10,23 @@
       <div class="col-md-4" *ngFor="let car of cars">
         <div class="product-item">
           <a href="offers.html"
-            ><img src={{car.imagePath}} alt="" class="img-fluid"
+            ><img src="{{ car.imagePath }}" alt="" class="img-fluid"
           /></a>
           <div class="down-content">
             <a href="offers.html"
-              ><h4>{{car.description}}</h4></a
+              ><h4>{{ car.description }}</h4></a
             >
-            <h6><small>from</small> {{car.dailyPrice}} <small>per weekend</small></h6>
-            <ul style="padding: 0;">
-              <li>Renk: {{car.colorName}}</li>
+            <h6>
+              <small>from</small> {{ car.dailyPrice }}
+              <small>per weekend</small>
+            </h6>
+            <ul style="padding: 0">
+              <li>Renk: {{ car.colorName }}</li>
             </ul>
+            <button class="btn btn-primary" routerLink="/cars/{{car.id}}">Araç Detayı</button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

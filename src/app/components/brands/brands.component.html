@@ -1,8 +1,8 @@
 <div class="container">
   <div class="card">
     <div class="card-header">Markalar</div>
-    <div class="card-body">
-      <span *ngFor="let brand of brands"><p>{{brand.name}}</p></span>
+    <div class="card-body text-center">
+      <img src={{brand.imagePath}} *ngFor="let brand of brands" class="img-fluid" width="100" />
     </div>
   </div>
 </div>
