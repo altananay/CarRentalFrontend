@@ -16,7 +16,6 @@ export class CarrentalComponent implements OnInit {
   cars:CarDto[] = []
   rental:Rental = {} as Rental
   errorMessage:string = ""
-  //test
   constructor(private router:Router, private carDetailService:CardetailService, private carRentalService:CarrentalService, private toastrService:ToastrService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
