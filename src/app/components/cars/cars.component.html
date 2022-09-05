@@ -1,13 +1,42 @@
 <div class="latest-products">
   <div class="container">
+    <div class="mt-5">
+      <label for="filterCar" class="form-label">Araba Ara</label>
+      <input
+        type="text"
+        [(ngModel)]="filterCar"
+        class="form-control"
+        id="filterCar"
+        placeholder="Aranacak arabayı girin."
+      />
+    </div>
+
+    <div *ngIf="filterCar" class="alert alert-success mt-3">
+      {{ filterCar }} aradınız.
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <select class="form-select" aria-label="Markalar" [(ngModel)]="brandId">
+          <option *ngFor="let brand of brands" [ngValue]="brand.id">{{brand.name}}</option>
+        </select>
+        <button class="btn btn-primary mt-2" routerLink="/cars/brands/{{brandId}}">Filtrele</button>
+      </div>
+      <div class="col-md-6">
+        <select class="form-select" aria-label="Renkler" [(ngModel)]="colorId">
+          <option *ngFor="let color of colors" [ngValue]="color.id">{{color.name}}</option>
+        </select>
+        <button class="btn btn-primary mt-2" routerLink="/cars/colors/{{colorId}}">Filtrele</button>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-12">
-        <div class="section-heading">
-          <h2>Offers</h2>
+        <div class="section-heading mt-5">
           <a href="offers.html">view more <i class="fa fa-angle-right"></i></a>
         </div>
       </div>
-      <div class="col-md-4" *ngFor="let car of cars">
+      <div class="col-md-4" *ngFor="let car of cars | filterPipe: filterCar">
         <div class="product-item">
           <a href="offers.html"
             ><img src="{{ car.imagePath }}" alt="" class="img-fluid"
@@ -23,7 +52,9 @@
             <ul style="padding: 0">
               <li>Renk: {{ car.colorName }}</li>
             </ul>
-            <button class="btn btn-primary" routerLink="/cars/{{car.id}}">Araç Detayı</button>
+            <button class="btn btn-primary" routerLink="/car/{{ car.id }}">
+              Araç Detayı
+            </button>
           </div>
         </div>
       </div>

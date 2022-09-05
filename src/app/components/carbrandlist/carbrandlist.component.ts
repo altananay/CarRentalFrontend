@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Brand } from 'src/models/brand';
-import { CarDto } from 'src/models/carDto';
-import { BrandlistService } from 'src/services/brandlist.service';
-import { CarbrandlistService } from 'src/services/carbrandlist.service';
+import { Brand } from 'src/app/models/brand';
+import { CarDto } from 'src/app/models/carDto';
+import { BrandlistService } from 'src/app/services/brandlist.service';
+import { CarbrandlistService } from 'src/app/services/carbrandlist.service';
 
 @Component({
   selector: 'app-carbrandlist',

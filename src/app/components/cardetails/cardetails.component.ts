@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarDto } from 'src/models/carDto';
-import { CardetailService } from 'src/services/cardetail.service';
+import { CarDto } from 'src/app/models/carDto';
+import { CardetailService } from 'src/app/services/cardetail.service';
 
 @Component({
   selector: 'app-cardetails',
@@ -16,8 +16,8 @@ export class CardetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      if (params["id"]) {
-        this.getCarDetailsById(params["id"])
+      if (params["carId"]) {
+        this.getCarDetailsById(params["carId"])
       }
     })
   }

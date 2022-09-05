@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BrandDto } from 'src/models/brandDto';
-import { BrandService } from 'src/services/brand.service';
+import { BrandDto } from 'src/app/models/brandDto';
+import { BrandImageService } from 'src/app/services/brandimages.service';
 
 @Component({
   selector: 'app-brands',
@@ -13,7 +13,7 @@ export class BrandsComponent implements OnInit {
 
 
 
-  constructor(private brandService:BrandService) { }
+  constructor(private brandImageService:BrandImageService) { }
 
   ngOnInit(): void {
     this.getBrands();
@@ -21,7 +21,7 @@ export class BrandsComponent implements OnInit {
 
   getBrands()
   {
-    this.brandService.getBrands().subscribe(response => {
+    this.brandImageService.getBrands().subscribe(response => {
       this.brands = response.data
     })
   }
