@@ -3,20 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NaviComponent } from './components/navi/navi.component';
-import { CarsComponent } from './components/cars/cars.component';
-import { BrandsComponent } from './components/brands/brands.component';
-import { BrandlistComponent } from './components/brandlist/brandlist.component';
-import { CarbrandlistComponent } from './components/carbrandlist/carbrandlist.component';
-import { CardetailsComponent } from './components/cardetails/cardetails.component';
-import { FormsModule } from '@angular/forms';
-import { FilterPipePipe } from './pipes/filter-pipe.pipe';
-import { CarwithbrandComponent } from './components/carwithbrand/carwithbrand.component';
-import { CarwithcolorComponent } from './components/carwithcolor/carwithcolor.component';
-import { CarrentalComponent } from './components/carrental/carrental.component';
-import { PaymentComponent } from './components/payment/payment.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
+import { PublicComponent } from './components/public/public/public.component';
+import { CarsComponent } from './components/public/cars/cars.component';
+import { NaviComponent } from './components/public/navi/navi.component';
+import { BrandsComponent } from './components/public/brands/brands.component';
+import { BrandlistComponent } from './components/public/brandlist/brandlist.component';
+import { CarbrandlistComponent } from './components/public/carbrandlist/carbrandlist.component';
+import { CardetailsComponent } from './components/public/cardetails/cardetails.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { CarwithbrandComponent } from './components/public/carwithbrand/carwithbrand.component';
+import { CarwithcolorComponent } from './components/public/carwithcolor/carwithcolor.component';
+import { PaymentComponent } from './components/public/payment/payment.component';
+import { CarrentalComponent } from './components/public/carrental/carrental.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/admin/navbar/navbar.component';
+import { AddColorComponent } from './components/admin/add-color/add-color.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { ToastrModule } from 'ngx-toastr';
     CarwithbrandComponent,
     CarwithcolorComponent,
     CarrentalComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminComponent,
+    SidebarComponent,
+    PublicComponent,
+    NavbarComponent,
+    AddColorComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +49,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
     })
