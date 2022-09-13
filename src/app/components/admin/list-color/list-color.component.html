@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Renk</th>
+        <th scope="col">Sil</th>
+        <th scope="col">Güncelle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let color of colors">
+        <th scope="row">{{color.id}}</th>
+        <td>{{color.name}}</td>
+        <td><button class="btn btn-primary">Sil</button></td>
+        <td><button class="btn btn-primary" routerLink="/admin/updatecolor/{{color.id}}">Güncelle</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

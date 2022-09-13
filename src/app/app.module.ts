@@ -22,6 +22,8 @@ import { CarrentalComponent } from './components/public/carrental/carrental.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/admin/navbar/navbar.component';
 import { AddColorComponent } from './components/admin/add-color/add-color.component';
+import { UpdateColorComponent } from './components/admin/update-color/update-color.component';
+import { ListColorComponent } from './components/admin/list-color/list-color.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AddColorComponent } from './components/admin/add-color/add-color.compon
     SidebarComponent,
     PublicComponent,
     NavbarComponent,
-    AddColorComponent
+    AddColorComponent,
+    UpdateColorComponent,
+    ListColorComponent
   ],
   imports: [
     BrowserModule,

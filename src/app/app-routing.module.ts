@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddColorComponent } from './components/admin/add-color/add-color.component';
 import { AdminComponent } from './components/admin/admin/admin.component';
+import { ListColorComponent } from './components/admin/list-color/list-color.component';
+import { UpdateColorComponent } from './components/admin/update-color/update-color.component';
 import { BrandlistComponent } from './components/public/brandlist/brandlist.component';
 import { CarbrandlistComponent } from './components/public/carbrandlist/carbrandlist.component';
 import { CardetailsComponent } from './components/public/cardetails/cardetails.component';
@@ -16,7 +18,11 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    children: [{ path: 'addcolor', component: AddColorComponent }],
+    children: [
+      { path: 'addcolor', component: AddColorComponent },
+      { path: 'updatecolor/:colorId', component: UpdateColorComponent },
+      { path: 'colors', component: ListColorComponent },
+    ],
   },
   {
     path: '',
