@@ -4,6 +4,7 @@ import { AddColorComponent } from './components/admin/add-color/add-color.compon
 import { AdminComponent } from './components/admin/admin/admin.component';
 import { ListColorComponent } from './components/admin/list-color/list-color.component';
 import { UpdateColorComponent } from './components/admin/update-color/update-color.component';
+import { LoginComponent } from './components/login/login.component';
 import { BrandlistComponent } from './components/public/brandlist/brandlist.component';
 import { CarbrandlistComponent } from './components/public/carbrandlist/carbrandlist.component';
 import { CardetailsComponent } from './components/public/cardetails/cardetails.component';
@@ -13,13 +14,14 @@ import { CarwithbrandComponent } from './components/public/carwithbrand/carwithb
 import { CarwithcolorComponent } from './components/public/carwithcolor/carwithcolor.component';
 import { PaymentComponent } from './components/public/payment/payment.component';
 import { PublicComponent } from './components/public/public/public.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
     children: [
-      { path: 'addcolor', component: AddColorComponent },
+      { path: 'addcolor', component: AddColorComponent, canActivate:[LoginGuard] },
       { path: 'updatecolor/:colorId', component: UpdateColorComponent },
       { path: 'colors', component: ListColorComponent },
     ],
@@ -39,6 +41,7 @@ const routes: Routes = [
       { path: 'cars/brands/:brandId', component: CarwithbrandComponent },
       { path: 'car/carrental/:carId', component: CarrentalComponent },
       { path: 'car/carrental/payment/:carId', component: PaymentComponent },
+      { path: 'login', component: LoginComponent },
     ],
   },
 ];
