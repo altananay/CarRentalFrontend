@@ -4,7 +4,7 @@ import { AddColorComponent } from './components/admin/add-color/add-color.compon
 import { AdminComponent } from './components/admin/admin/admin.component';
 import { ListColorComponent } from './components/admin/list-color/list-color.component';
 import { UpdateColorComponent } from './components/admin/update-color/update-color.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/public/login/login.component';
 import { BrandlistComponent } from './components/public/brandlist/brandlist.component';
 import { CarbrandlistComponent } from './components/public/carbrandlist/carbrandlist.component';
 import { CardetailsComponent } from './components/public/cardetails/cardetails.component';

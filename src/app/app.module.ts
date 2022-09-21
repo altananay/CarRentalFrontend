@@ -24,7 +24,7 @@ import { NavbarComponent } from './components/admin/navbar/navbar.component';
 import { AddColorComponent } from './components/admin/add-color/add-color.component';
 import { UpdateColorComponent } from './components/admin/update-color/update-color.component';
 import { ListColorComponent } from './components/admin/list-color/list-color.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/public/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
