@@ -9,7 +9,39 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form [formGroup]="loginForm">
+        <form class="mt-5" [formGroup]="registerForm">
+          <div class="form-outline mb-4">
+            <input
+              formControlName="firstName"
+              type="text"
+              id="form3Example3"
+              class="form-control form-control-lg"
+              placeholder="Enter a first name"
+            />
+            <span
+              *ngIf="registerForm.get('firstName')?.errors"
+              class="text-danger"
+            >
+              First Name Required
+            </span>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input
+              formControlName="lastName"
+              type="text"
+              id="form3Example3"
+              class="form-control form-control-lg"
+              placeholder="Enter a last name"
+            />
+            <span
+              *ngIf="registerForm.get('lastName')?.errors"
+              class="text-danger"
+            >
+              Last Name Required
+            </span>
+          </div>
+
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input
@@ -20,11 +52,8 @@
               placeholder="Enter a valid email address"
             />
             <span
-              *ngIf="
-                loginForm.get('email')?.errors
-              "
+              *ngIf="registerForm.get('email')?.errors"
               class="text-danger"
-              
             >
               Email Required
             </span>
@@ -40,9 +69,7 @@
               placeholder="Enter password"
             />
             <span
-              *ngIf="
-                loginForm.get('password')?.errors
-              "
+              *ngIf="registerForm.get('password')?.errors"
               class="text-danger"
             >
               Password Required
@@ -51,17 +78,13 @@
 
           <div class="text-center text-lg-start mt-4 pt-2">
             <button
-              type="submit"
+              type="button"
               class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem"
-              (click)="login()"
+              (click)="register()"
             >
-              Login
+              Register
             </button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">
-              Don't have an account?
-              <a class="link-danger">Register</a>
-            </p>
           </div>
         </form>
       </div>

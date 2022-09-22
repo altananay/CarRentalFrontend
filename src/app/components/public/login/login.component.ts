@@ -6,36 +6,40 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  loginForm: FormGroup
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, private toastrService:ToastrService) { }
+  loginForm: FormGroup;
+  error : boolean
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.createLoginForm();
   }
 
-  createLoginForm()
-  {
+  createLoginForm() {
     this.loginForm = this.formBuilder.group({
-      email : ["", Validators.required],
-      password: ["", Validators.required]
-    })
+      email: [null, Validators.required],
+      password: [null, Validators.required],
+    });
   }
 
-  login()
-  {
+  login() {
     if (this.loginForm.valid) {
-      let loginModel = Object.assign({}, this.loginForm.value)
-      this.authService.login(loginModel).subscribe({next : response => {
-        this.toastrService.info(response.message);
-        localStorage.setItem("token", response.data.token)
-      }, error : responseError => {
-        console.log(responseError);
-      }})
+      let loginModel = Object.assign({}, this.loginForm.value);
+      this.authService.login(loginModel).subscribe({
+        next: (response) => {
+          this.toastrService.info(response.message);
+          localStorage.setItem('token', response.data.token);
+        },
+        error: (responseError) => {
+          console.log(responseError);
+        },
+      });
     }
   }
-
 }

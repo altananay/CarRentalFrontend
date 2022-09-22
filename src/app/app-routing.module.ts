@@ -15,13 +15,18 @@ import { CarwithcolorComponent } from './components/public/carwithcolor/carwithc
 import { PaymentComponent } from './components/public/payment/payment.component';
 import { PublicComponent } from './components/public/public/public.component';
 import { LoginGuard } from './guards/login.guard';
+import { RegisterComponent } from './components/public/register/register.component';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
     children: [
-      { path: 'addcolor', component: AddColorComponent, canActivate:[LoginGuard] },
+      {
+        path: 'addcolor',
+        component: AddColorComponent,
+        canActivate: [LoginGuard],
+      },
       { path: 'updatecolor/:colorId', component: UpdateColorComponent },
       { path: 'colors', component: ListColorComponent },
     ],
@@ -42,6 +47,7 @@ const routes: Routes = [
       { path: 'car/carrental/:carId', component: CarrentalComponent },
       { path: 'car/carrental/payment/:carId', component: PaymentComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
     ],
   },
 ];

@@ -26,6 +26,7 @@ import { UpdateColorComponent } from './components/admin/update-color/update-col
 import { ListColorComponent } from './components/admin/list-color/list-color.component';
 import { LoginComponent } from './components/public/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/public/register/register.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AddColorComponent,
     UpdateColorComponent,
     ListColorComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
