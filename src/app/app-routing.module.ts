@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddColorComponent } from './components/admin/add-color/add-color.component';
 import { AdminComponent } from './components/admin/admin/admin.component';
@@ -13,9 +13,10 @@ import { CarsComponent } from './components/public/cars/cars.component';
 import { CarwithbrandComponent } from './components/public/carwithbrand/carwithbrand.component';
 import { CarwithcolorComponent } from './components/public/carwithcolor/carwithcolor.component';
 import { PaymentComponent } from './components/public/payment/payment.component';
-import { PublicComponent } from './components/public/public/public.component';
 import { LoginGuard } from './guards/login.guard';
 import { RegisterComponent } from './components/public/register/register.component';
+import { PublicComponent } from './components/public/public/public.component';
+import { ProfileComponent } from './components/public/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
       { path: 'car/carrental/payment/:carId', component: PaymentComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      {path: "profile/:email", component : ProfileComponent, canActivate: [LoginGuard]}
     ],
   },
 ];

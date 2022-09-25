@@ -5,6 +5,7 @@ import { RegisterModel } from '../models/registerModel';
 import { ResponseModel } from '../models/responseModel';
 import SingleResponseModel from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 
   apiUrl = "https://localhost:7269/api/auth/"
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private localStorageService:LocalStorageService) { }
 
   login(user:LoginModel)
   {
@@ -27,7 +28,7 @@ export class AuthService {
 
   isAuthenticated()
   {
-    if (localStorage.getItem("token")) {
+    if (this.localStorageService.getFromLocalStorage("token")) {
       return true
     }
     else

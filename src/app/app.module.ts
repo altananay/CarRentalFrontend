@@ -7,9 +7,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
 import { AdminComponent } from './components/admin/admin/admin.component';
 import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
-import { PublicComponent } from './components/public/public/public.component';
 import { CarsComponent } from './components/public/cars/cars.component';
-import { NaviComponent } from './components/public/navi/navi.component';
+import { NaviComponent } from './components/layouts/navi/navi.component';
 import { BrandsComponent } from './components/public/brands/brands.component';
 import { BrandlistComponent } from './components/public/brandlist/brandlist.component';
 import { CarbrandlistComponent } from './components/public/carbrandlist/carbrandlist.component';
@@ -27,6 +26,9 @@ import { ListColorComponent } from './components/admin/list-color/list-color.com
 import { LoginComponent } from './components/public/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/public/register/register.component';
+import { PublicComponent } from './components/public/public/public.component';
+import { ProfileComponent } from './components/public/profile/profile.component';
+import { FooterComponent } from './components/layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,15 @@ import { RegisterComponent } from './components/public/register/register.compone
     PaymentComponent,
     AdminComponent,
     SidebarComponent,
-    PublicComponent,
     NavbarComponent,
     AddColorComponent,
     UpdateColorComponent,
     ListColorComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PublicComponent,
+    ProfileComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
